@@ -5,7 +5,7 @@ import numpy.random as npr
 import random
 def main():
 	train_set = []
-	f = open(argv[1],'r')
+	f = open('train.csv','r')
 	i = 0
 
 	for row in csv.reader(f):
@@ -58,24 +58,9 @@ def main():
 		b = b - lr*delta_b/sigma_b
 		#print Loss		
 
-			
-"""
-#calculate RMSE
-	rmse = 0
-	count = 0
-	temp = 0
-	for i in range(0,5751,480):
-		for j in range(471):
-			a = np.array([train_set[i+j:i+j+9]])
-			temp = b + np.sum(w*a) + w2*(a[0][8]**2)
-			rmse = rmse + (train_set[i+j+9]-temp)**2
-			count = count+1
-	print ('learning rate = ',lr)
-	rmse = (rmse/count)**0.5
-	print ('RMSE = ',rmse)
-"""
 
-	f = open(argv[2],'r')
+
+	f = open('test_X.csv','r')
 	i = 0
 
 	test = []
@@ -93,17 +78,8 @@ def main():
 		y = b + np.sum(w*input_array) + w2*(input_array[0][8]**2)
 		ans.append(y)
 
-"""
-	print ('b = ',b) 
-	print 'w = '
-	print w
-	print ('w2 = ',w2)
-	print ('sigma_w = ', sigma_w)
-	print ('sigma_w2 = ', sigma_w2)
-	print ('sigma_b = ',sigma_b)
-"""
 
-	f = open(argv[3],'w')
+	f = open('res.csv','w')
 	write = csv.writer(f)
 	text = ['id','value']
 	write.writerow(text)

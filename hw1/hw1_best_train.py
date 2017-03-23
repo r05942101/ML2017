@@ -9,7 +9,7 @@ def main():
 		data.append([])
 
 
-	f = open(argv[1],'r')
+	f = open('train.csv','r')
 	n_row = 0
 
 
@@ -48,7 +48,7 @@ def main():
 	LOSS = 0
 	temp = 0
 
-	for i in range(10000):  # iteration 
+	for i in range(11000):  # iteration
 		for j in range(12):  # 12 month
 			for k in range(471):
 			
@@ -94,25 +94,9 @@ def main():
 
 		random.shuffle(data)
 			
-"""
-# calculate RSME
-rmse = 0
-count = 0
-
-for i in range(12):
-	for j in range(471):
-		a = np.array([data[i][j:j+9]])
-
-		y = b + np.sum(weight*a) + weight10*(a[0][8]-a[0][7]) + weight11*a[0][8]**2
-		rmse = rmse + (data[i][j+9] - y)**2
-		count = count+1
-
-rmse = (rmse/count)**0.5
-print ('RMSE = ',rmse)
-"""
 
 
-	f = open(argv[2],'r')
+	f = open('test_X.csv','r')
 
 
 	test = []
@@ -140,7 +124,7 @@ print ('RMSE = ',rmse)
 		answer.append(y)
 	
 
-	f = open(argv[3],'w')
+	f = open('res.csv','w')
 	w = csv.writer(f)
 	text = ['id','value']
 	w.writerow(text)
