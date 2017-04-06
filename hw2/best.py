@@ -177,7 +177,7 @@ def main():
 
 	f = np.zeros((mini_batch,1))
 
-	for i in range(10):
+	for i in range(4):
 		data = np.array([up50_train[0]])
 		for m in range(mini_batch/2-1):
 			data = np.append(data,[up50_train[m+1]],axis=0)  #data = mini_batch * dimension+1
