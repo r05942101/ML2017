@@ -112,7 +112,7 @@ def main():
 		else:
 			answer.append(int(0))
 
-	f = open('answer.csv','w')
+	f = open(argv[6],'w')
 	w = csv.writer(f)
 	text = ['id','label']
 	w.writerow(text)
