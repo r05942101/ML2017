@@ -1,1 +1,0 @@
-python3.6 ./multi_model.py
